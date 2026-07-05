@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "fs/promises";
 import { dirname, join } from "path";
 import { NextResponse } from "next/server";
+import { isReadOnlyFileSystemError } from "@/lib/json-store";
 import { sendNewsletterConfirmationEmail } from "@/lib/newsletter-email";
 import type { NewsletterEmailResult } from "@/lib/newsletter-email";
 import type { Language } from "@/types";
@@ -40,8 +41,17 @@ async function readSubscribers(): Promise<NewsletterSubscriber[]> {
 }
 
 async function writeSubscribers(subscribers: NewsletterSubscriber[]) {
-  await mkdir(dirname(subscribersPath), { recursive: true });
-  await writeFile(subscribersPath, `${JSON.stringify(subscribers, null, 2)}\n`, "utf8");
+  try {
+    await mkdir(dirname(subscribersPath), { recursive: true });
+    await writeFile(subscribersPath, `${JSON.stringify(subscribers, null, 2)}\n`, "utf8");
+  } catch (error) {
+    if (isReadOnlyFileSystemError(error)) {
+      console.warn("Skipping newsletter subscriber persistence; filesystem is read-only.");
+      return;
+    }
+
+    throw error;
+  }
 }
 
 function parseLanguage(language: unknown): Language {

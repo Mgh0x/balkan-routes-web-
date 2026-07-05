@@ -20,12 +20,26 @@ export async function appendJsonItem<T>(fileName: string, item: T) {
   const nextItems = [...items, item];
   const storePath = getStorePath(fileName);
 
-  await mkdir(dirname(storePath), { recursive: true });
-  await writeFile(storePath, `${JSON.stringify(nextItems, null, 2)}\n`, "utf8");
+  try {
+    await mkdir(dirname(storePath), { recursive: true });
+    await writeFile(storePath, `${JSON.stringify(nextItems, null, 2)}\n`, "utf8");
+  } catch (error) {
+    if (isReadOnlyFileSystemError(error)) {
+      console.warn(`Skipping local JSON persistence for ${fileName}; filesystem is read-only.`);
+      return nextItems;
+    }
+
+    throw error;
+  }
 
   return nextItems;
 }
 
 function getStorePath(fileName: string) {
   return join(process.cwd(), "data", fileName);
+}
+
+export function isReadOnlyFileSystemError(error: unknown) {
+  const code = (error as NodeJS.ErrnoException).code;
+  return code === "EROFS" || code === "EACCES" || code === "EPERM";
 }
