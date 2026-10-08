@@ -39,6 +39,7 @@ yarn-error.log*
 /data/newsletter-subscribers.json
 /data/contact-submissions.json
 /data/trip-requests.json
+/.stack-data/
 
 # local agent/design working files
 /AGENTS.md

@@ -1,7 +1,8 @@
 services:
   web:
     build: .
-    restart: unless-stopped
+    cpus: 0.5
+    mem_limit: 1000m
     environment:
       NODE_ENV: production
       PORT: "3000"
@@ -17,10 +18,5 @@ services:
       SMTP_USER: "${SMTP_USER:-}"
       SMTP_PASS: "${SMTP_PASS:-}"
       RESEND_API_KEY: "${RESEND_API_KEY:-}"
-    expose:
-      - "3000"
     volumes:
-      - submissions:/app/data
-
-volumes:
-  submissions:
+      - ./.stack-data/submissions:/app/data
