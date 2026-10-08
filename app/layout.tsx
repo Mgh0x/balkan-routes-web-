@@ -20,13 +20,16 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://skopje-routes.local"),
+  metadataBase: new URL("https://balkan-routes.vercel.app"),
   title: {
     default: "Skopje Routes | Private Tours in North Macedonia",
     template: "%s | Skopje Routes",
   },
   description:
     "Skopje Routes is a Skopje-based tourism agency creating private tours, day trips, local experiences, airport transfers, and custom journeys across North Macedonia.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Skopje Routes | Private Tours in North Macedonia",
     description:

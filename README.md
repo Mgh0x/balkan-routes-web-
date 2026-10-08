@@ -87,3 +87,11 @@ Add a new object to `data/blog.ts` with a unique `slug`, localized title/categor
 ## Notes
 
 Contact, custom trip, and newsletter forms are backed by local API routes and can send real email when provider credentials are configured.
+
+## Deploying With RepoRun
+
+The repository includes a production Dockerfile, `docker-compose.yml`, and `stack.yml` for RepoRun. Connect the Git repository and branch to your team stack, then validate and deploy it. The `web` service listens on port 3000 and uses CAS-protected ingress.
+
+After the first deployment, set the stack environment value `SITE_URL` to the endpoint RepoRun assigned to the app, then redeploy so links in newsletter emails use the public address. Email delivery is optional; configure `EMAIL_PROVIDER` plus either the SMTP values or `RESEND_API_KEY` in the stack environment to enable it. Set `EMAIL_FROM`, `EMAIL_REPLY_TO`, and `CONTACT_TO_EMAIL` to addresses configured for your mail provider.
+
+Form submissions are stored in the Compose `submissions` volume mounted at `/app/data`. RepoRun's Delete runtime data action also deletes these submissions.

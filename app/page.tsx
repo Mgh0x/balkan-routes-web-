@@ -17,7 +17,7 @@ export default function Home() {
     email: "hello@skopjeroutes.mk",
     telephone: "+389 70 555 210",
     areaServed: "North Macedonia",
-    url: "https://skopje-routes.local",
+    url: "https://balkan-routes.vercel.app",
   };
 
   return (

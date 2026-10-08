@@ -13,7 +13,7 @@ export function TourCard({ tour, index = 0 }: { tour: Tour; index?: number }) {
   return (
     <article className="tour-card-motion motion-reveal motion-reveal--line group grid gap-5 border-b border-[var(--line)] bg-[var(--paper)] py-7 transition duration-300 hover:bg-white md:grid-cols-[74px_260px_1fr_170px] md:items-center md:pr-6">
       <div className="hidden h-full border-r border-[var(--line)] pr-5 md:flex md:items-start">
-        <span className="font-display text-4xl leading-none text-[var(--gold)]">{String(index + 1).padStart(2, "0")}</span>
+        <span className="font-display text-4xl leading-none text-[var(--gold-ink)]">{String(index + 1).padStart(2, "0")}</span>
       </div>
       <div className="media-frame relative aspect-[16/10] md:aspect-[5/4]">
         <Image

@@ -11,7 +11,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
   return (
     <article className="motion-reveal motion-reveal--line grid gap-5 border-t border-[var(--line)] py-7 md:grid-cols-[220px_1fr] md:items-center">
       <div className="media-frame relative aspect-[16/10] md:aspect-[4/3]">
-        <Image src={member.image} alt="" fill sizes="(min-width: 1024px) 220px, 100vw" className="object-cover" />
+        <Image src={member.image} alt={member.name} fill sizes="(min-width: 1024px) 220px, 100vw" className="object-cover" />
       </div>
       <div className="grid gap-5 md:grid-cols-[0.75fr_1fr] md:items-start">
         <div>

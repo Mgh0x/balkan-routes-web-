@@ -30,7 +30,7 @@ export function ProjectTeamPageClient() {
                 key={member.studentId}
                 className="motion-reveal motion-reveal--line grid gap-4 border-t border-[var(--line)] py-6 sm:grid-cols-[72px_1fr_160px] sm:items-center"
               >
-                <span className="font-display text-3xl text-[var(--gold)]">{String(index + 1).padStart(2, "0")}</span>
+                <span className="font-display text-3xl text-[var(--gold-ink)]">{String(index + 1).padStart(2, "0")}</span>
                 <h3 className="font-display text-3xl leading-tight text-[var(--ink)]">{member.name}</h3>
                 <p className="fine-label text-[var(--forest)] sm:text-right">{member.studentId}</p>
               </article>

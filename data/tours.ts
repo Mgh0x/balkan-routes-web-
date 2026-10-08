@@ -15,7 +15,7 @@ export const tours: Tour[] = [
     groupSize: { en: "1-8 guests", mk: "1-8 гости", tr: "1-8 misafir" },
     difficulty: { en: "Easy walk", mk: "Лесна прошетка", tr: "Kolay yürüyüş" },
     image: images.tours.skopje,
-    gallery: [images.tours.skopje, images.destinations.skopje, images.intro],
+    gallery: [images.tours.skopje, images.galleryExtra.treskavec, images.intro],
     description: {
       en: "A private walk through Ottoman lanes, stone bridges, artisan shops, and the layered stories of central Skopje.",
       mk: "Приватна прошетка низ османлиски улички, камени мостови, занаетчиски дуќани и слоевитите приказни на центарот на Скопје.",
@@ -57,7 +57,7 @@ export const tours: Tour[] = [
     groupSize: { en: "1-7 guests", mk: "1-7 гости", tr: "1-7 misafir" },
     difficulty: { en: "Easy to moderate", mk: "Лесно до умерено", tr: "Kolay-orta" },
     image: images.tours.matka,
-    gallery: [images.tours.matka, images.destinations.matka, images.tours.grand],
+    gallery: [images.tours.matka, images.galleryExtra.peshnaCave, images.tours.grand],
     description: {
       en: "A private escape to emerald water, limestone cliffs, boat rides, and quiet monastery trails just outside Skopje.",
       mk: "Приватно бегство до смарагдна вода, варовнички карпи, возење со чамец и мирни манастирски патеки близу Скопје.",
@@ -99,7 +99,7 @@ export const tours: Tour[] = [
     groupSize: { en: "1-6 guests", mk: "1-6 гости", tr: "1-6 misafir" },
     difficulty: { en: "Moderate walk", mk: "Умерена прошетка", tr: "Orta yürüyüş" },
     image: images.tours.ohrid,
-    gallery: [images.tours.ohrid, images.intro, images.tours.skopje],
+    gallery: [images.tours.ohrid, images.galleryExtra.makedonium, images.tours.skopje],
     description: {
       en: "A lakefront heritage day with UNESCO churches, cobbled lanes, artisan pearls, and sunset views above Lake Ohrid.",
       mk: "Езерски ден со УНЕСКО цркви, калдрмисани улички, охридски бисери и зајдисонце над Охридското Езеро.",
@@ -141,7 +141,7 @@ export const tours: Tour[] = [
     groupSize: { en: "1-6 guests", mk: "1-6 гости", tr: "1-6 misafir" },
     difficulty: { en: "Custom pace", mk: "Прилагодено темпо", tr: "Özel tempo" },
     image: images.tours.mavrovo,
-    gallery: [images.tours.mavrovo, images.destinations.mavrovo, images.tours.grand],
+    gallery: [images.tours.mavrovo, images.galleryExtra.solunskaGlava, images.tours.grand],
     description: {
       en: "A mountain day through lake viewpoints, forest roads, village stops, and the calm highland character of western Macedonia.",
       mk: "Планински ден со езерски видиковци, шумски патишта, села и мирниот високопланински карактер на западна Македонија.",

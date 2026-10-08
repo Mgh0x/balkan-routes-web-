@@ -30,4 +30,10 @@ export const images = {
     "/images/smolari-waterfall.jpg",
     "/images/galicnik-mavrovo.jpg",
   ],
+  galleryExtra: {
+    treskavec: "/images/treskavec-monastery.jpg",
+    peshnaCave: "/images/peshna-cave.jpg",
+    makedonium: "/images/makedonium-krusevo.jpg",
+    solunskaGlava: "/images/solunska-glava.jpg",
+  },
 };

@@ -1,0 +1,26 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      SITE_URL: "${SITE_URL:-http://127.0.0.1:3000}"
+      EMAIL_PROVIDER: "${EMAIL_PROVIDER:-}"
+      EMAIL_FROM: "${EMAIL_FROM:-Skopje Routes <hello@skopjeroutes.mk>}"
+      EMAIL_REPLY_TO: "${EMAIL_REPLY_TO:-hello@skopjeroutes.mk}"
+      CONTACT_TO_EMAIL: "${CONTACT_TO_EMAIL:-hello@skopjeroutes.mk}"
+      SMTP_HOST: "${SMTP_HOST:-}"
+      SMTP_PORT: "${SMTP_PORT:-465}"
+      SMTP_SECURE: "${SMTP_SECURE:-true}"
+      SMTP_USER: "${SMTP_USER:-}"
+      SMTP_PASS: "${SMTP_PASS:-}"
+      RESEND_API_KEY: "${RESEND_API_KEY:-}"
+    expose:
+      - "3000"
+    volumes:
+      - submissions:/app/data
+
+volumes:
+  submissions:

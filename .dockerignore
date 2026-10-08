@@ -1,0 +1,10 @@
+node_modules
+.next
+.next-*
+.next-dev-logs
+.vercel
+.git
+.env*
+data/*.json
+npm-debug.log*
+.DS_Store

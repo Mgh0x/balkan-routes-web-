@@ -174,7 +174,7 @@ export function Footer() {
         </div>
       </div>
       <div className="container-shell mt-10 text-xs text-white/45">
-        &copy; {new Date().getFullYear()} Skopje Routes. 0xmgh. {dictionary.common.copyright}
+        &copy; {new Date().getFullYear()} Skopje Routes. {dictionary.common.copyright}
       </div>
     </footer>
   );

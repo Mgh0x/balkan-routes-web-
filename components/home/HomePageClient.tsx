@@ -155,7 +155,7 @@ export function HomePageClient({ hasHeroVideo }: { hasHeroVideo: boolean }) {
             <div className="motion-list mt-10 border-t border-[var(--line)]">
               {planningSteps.map((step, index) => (
                 <article key={step.title} className="motion-reveal motion-reveal--line grid gap-5 border-b border-[var(--line)] py-7 sm:grid-cols-[74px_1fr]">
-                  <span className="font-display text-4xl text-[var(--gold)]">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="font-display text-4xl text-[var(--gold-ink)]">{String(index + 1).padStart(2, "0")}</span>
                   <div>
                     <h3 className="font-display text-3xl leading-tight text-[var(--ink)]">{step.title}</h3>
                     <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--muted)]">{step.text}</p>
